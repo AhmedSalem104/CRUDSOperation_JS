@@ -69,7 +69,7 @@ function displayProducts() {
             <td>${productArr[i].price}</td>
             <td>${productArr[i].category}</td>
             <td>${productArr[i].desc}</td>
-            <td><button  onclick="patchProduct(${i})" class="btn btn-outline-primary">Update</button></td>
+            <td><button  onclick="patchProduct(${i})" class="btn btn-outline-warning">Update</button></td>
             <td><button  onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button></td>
         </tr>`
         }
