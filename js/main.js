@@ -69,8 +69,8 @@ function displayProducts() {
             <td>${productArr[i].price}</td>
             <td>${productArr[i].category}</td>
             <td>${productArr[i].desc}</td>
-            <td><button onclick="patchProduct(${i})" class="btn btn-outline-primary">Update</button></td>
-            <td><button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button></td>
+            <td><button  onclick="patchProduct(${i})" class="btn btn-outline-primary">Update</button></td>
+            <td><button  onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button></td>
         </tr>`
         }
     }
@@ -87,6 +87,7 @@ function deleteProduct(index) {
     onDataChange()
 }
 function patchProduct(index) {
+   
     mainIndex = index;
     updateMode = true;
     console.log(productArr[index])
@@ -96,6 +97,8 @@ function patchProduct(index) {
     prouductDescInput.value = productArr[index].desc;
     addUpdatebtn.innerHTML = "update Product";
     cancelbtn.classList = "btn btn-secondary ms-2 my-5 d-inline"
+
+    validProductData()
 }
 function getCancle() {
     cancelbtn.classList = "btn btn-secondary ms-2 my-5 d-none"
