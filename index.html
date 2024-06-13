@@ -21,15 +21,36 @@
         <div class="row">
             <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
                 <label for="prouductNameInput">ProuductName :</label>
-                <input class="form-control" id="prouductNameInput" placeholder="Ex.samsung" type="text">
+                <input onkeyup="validProductData()" class="form-control" id="prouductNameInput" placeholder="Ex.samsung" type="text">
+                <div id="prouductNameAlert" class="alert alert-danger mt-1 d-none">
+                    <ul class="p-0 m-0 ps-3">
+                        <li>Product must`t Empty</li>
+                        <li>Product must start  with uppercase char</li>
+              
+                    </ul>
+                </div>
             </div>
             <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
                 <label for="prouductPriceInput">ProductPrice</label>
-                <input class="form-control" id="prouductPriceInput" placeholder="" type="text">
+                <input onkeyup="validProductData()" class="form-control" id="prouductPriceInput" placeholder="" type="text">
+                <div id="prouductPriceAlert" class="alert alert-danger mt-1 d-none">
+                    <ul class="p-0 m-0 ps-3">
+                        <li>price must`t Empty</li>
+                        <li>Prouduct price must be valid digit</li>
+                     
+                    </ul>
+                </div>
             </div>
             <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
                 <label for="prouductCategoryInput">ProductCategory</label>
-                <input class="form-control" id="prouductCategoryInput" placeholder="" type="text">
+                <input onkeyup="validProductData()" class="form-control" id="prouductCategoryInput" placeholder="" type="text">
+                <div id="prouductCategoryAlert" class="alert alert-danger mt-1 d-none">
+                    <ul class="p-0 m-0 ps-3">
+                        <li>Category must`t Empty</li>
+                        <li>Category must start  with uppercase char</li>
+                 
+                    </ul>
+                </div>
             </div>
             <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
                 <label for="prouductDescInput">ProductDesc</label>

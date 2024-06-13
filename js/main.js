@@ -9,23 +9,33 @@ var productArr = JSON.parse(localStorage.getItem("products")) ?? [];
 var updateMode = false;
 var addUpdatebtn = document.getElementById("addUpdatebtn");
 var cancelbtn = document.getElementById("cancelbtn")
+
+
+var prouductNameAlert = document.getElementById("prouductNameAlert")
+var prouductPriceAlert = document.getElementById("prouductPriceAlert")
+var prouductCategoryAlert = document.getElementById("prouductCategoryAlert")
+
 var mainIndex;
 displayProducts();
 
 
 function AddUpdateProduct() {
+    validProductData()
+    if (isDataValid()) {
+        if (!updateMode) {
 
-    if (!updateMode) {
+            addProduct(getProduct());
+        }
+        else {
 
-        addProduct(getProduct());
+            updateProduct(getProduct())
+
+        }
+        onDataChange()
+        clearForm()
+
     }
-    else {
 
-        updateProduct(getProduct())
-
-    }
-    onDataChange()
-    clearForm()
 }
 function getProduct() {
     var product = {
@@ -52,9 +62,9 @@ function displayProducts() {
     var cartoona = "";
     for (var i = 0; i < productArr.length; i++) {
         // Search By poductName & productPrice
-        if (productArr[i].name.toLowerCase().includes(searchTerm.toLowerCase()) || productArr[i].price.includes(searchTerm))  {
+        if (productArr[i].name.toLowerCase().includes(searchTerm.toLowerCase()) || productArr[i].price.includes(searchTerm)) {
             cartoona += `  <tr >
-            <td>${i+1}</td>
+            <td>${i + 1}</td>
             <td>${productArr[i].name}</td>
             <td>${productArr[i].price}</td>
             <td>${productArr[i].category}</td>
@@ -98,7 +108,62 @@ function clearForm() {
     prouductPriceInput.value = "";
     prouductCategoryInput.value = "";
     prouductDescInput.value = "";
+    prouductNameInput.classList.remove("is-valid")
+    prouductPriceInput.classList.remove("is-valid")
+    prouductCategoryInput.classList.remove("is-valid")
+
+
 }
+
+
+
+
+function isDataValid() {
+    return /^[A-Z][\w\s]{2,19}$/.test(prouductNameInput.value) &&
+        /^[1-9]\d*$/.test(prouductPriceInput.value) && 
+        /^[A-Z][\w\s]{2,19}$/.test(prouductCategoryInput.value);
+}
+
+function validProductData() {
+    if (/^[A-Z][\w\s]{2,19}$/.test(prouductNameInput.value)) {
+        prouductNameAlert.classList.add("d-none")
+        prouductNameInput.classList.add("is-valid")
+        prouductNameInput.classList.remove("is-invalid")
+
+
+    }
+    else {
+        prouductNameAlert.classList.remove("d-none")
+        prouductNameInput.classList.remove("is-valid")
+        prouductNameInput.classList.add("is-invalid")
+
+    }
+
+    if (/^[1-9]\d*$/.test(prouductPriceInput.value)) {
+        prouductPriceAlert.classList.add("d-none")
+        prouductPriceInput.classList.add("is-valid")
+        prouductPriceInput.classList.remove("is-invalid")
+    }
+    else {
+        prouductPriceAlert.classList.remove("d-none")
+        prouductPriceInput.classList.remove("is-valid")
+        prouductPriceInput.classList.add("is-invalid")
+    }
+
+
+    if (/^[A-Z][\w\s]{2,19}$/.test(prouductCategoryInput.value)) {
+        prouductCategoryAlert.classList.add("d-none")
+        prouductCategoryInput.classList.add("is-valid")
+        prouductCategoryInput.classList.remove("is-invalid")
+    }
+    else {
+        prouductCategoryAlert.classList.remove("d-none")
+        prouductCategoryInput.classList.remove("is-valid")
+        prouductCategoryInput.classList.add("is-invalid")
+    }
+}
+
+
 
 
 /* function Search() {
