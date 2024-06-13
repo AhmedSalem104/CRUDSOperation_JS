@@ -1,0 +1,15 @@
+body{
+background-image: url(../imgs/CRUD.png);
+background-size: cover;
+background-attachment: fixed;
+}
+#main{
+    border-radius: 8px;
+    background-color: rgba(165, 164, 201, 0.205);
+}
+#table{
+    border-radius: 10px;
+}
+#img{
+    width: 250px;
+}

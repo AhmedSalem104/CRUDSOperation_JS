@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/crud2.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>CRUD Operations</title>
+</head>
+
+<body>
+    <!--  <div class="m-5 d-flex justify-content-center align-item-center">
+        <div class="">
+            <img id="img" class="" src="imgs/crud.webp" alt="">
+        </div>
+    </div> -->
+    <div id="main" class="container text-white  my-5 p-5">
+        <div class="row">
+            <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
+                <label for="prouductNameInput">ProuductName :</label>
+                <input class="form-control" id="prouductNameInput" placeholder="Ex.samsung" type="text">
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
+                <label for="prouductPriceInput">ProductPrice</label>
+                <input class="form-control" id="prouductPriceInput" placeholder="" type="text">
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
+                <label for="prouductCategoryInput">ProductCategory</label>
+                <input class="form-control" id="prouductCategoryInput" placeholder="" type="text">
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
+                <label for="prouductDescInput">ProductDesc</label>
+                <textarea class="form-control" type="text" name="" id="prouductDescInput"></textarea>
+            </div>
+
+        </div>
+        <div class="container ">
+            <div class="d-flex justify-content-center">
+                <button onclick="AddUpdateProduct()" id="addUpdatebtn" class="btn btn-success my-5 px-3">Add
+                    prouduct</button>
+                <button onclick="getCancle()" id="cancelbtn" class="btn btn-secondary ms-2 my-5 d-none">cancle </button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+        <input id="SearchInput" onkeyup="displayProducts()" type="text" class="w-50 mx-auto form-control mb-4"
+            placeholder="search">
+        <table id="table" class="table table-dark text-center px-5">
+            <thead>
+                <td>Index</td>
+                <td>Prouduct Name</td>
+                <td>Prouduct Price</td>
+                <td>Prouduct Category</td>
+                <td>Prouduct Desc</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
