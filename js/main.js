@@ -10,7 +10,6 @@ var updateMode = false;
 var addUpdatebtn = document.getElementById("addUpdatebtn");
 var cancelbtn = document.getElementById("cancelbtn")
 
-
 var prouductNameAlert = document.getElementById("prouductNameAlert")
 var prouductPriceAlert = document.getElementById("prouductPriceAlert")
 var prouductCategoryAlert = document.getElementById("prouductCategoryAlert")
@@ -18,24 +17,18 @@ var prouductCategoryAlert = document.getElementById("prouductCategoryAlert")
 var mainIndex;
 displayProducts();
 
-
 function AddUpdateProduct() {
     validProductData()
     if (isDataValid()) {
         if (!updateMode) {
-
             addProduct(getProduct());
         }
         else {
-
             updateProduct(getProduct())
-
         }
         onDataChange()
         clearForm()
-
     }
-
 }
 function getProduct() {
     var product = {
@@ -114,25 +107,17 @@ function clearForm() {
     prouductNameInput.classList.remove("is-valid")
     prouductPriceInput.classList.remove("is-valid")
     prouductCategoryInput.classList.remove("is-valid")
-
-
 }
-
-
-
-
 function isDataValid() {
     return /^[A-Z][\w\s]{2,19}$/.test(prouductNameInput.value) &&
         /^[1-9]\d*$/.test(prouductPriceInput.value) && 
         /^[A-Z][\w\s]{2,19}$/.test(prouductCategoryInput.value);
 }
-
 function validProductData() {
     if (/^[A-Z][\w\s]{2,19}$/.test(prouductNameInput.value)) {
         prouductNameAlert.classList.add("d-none")
         prouductNameInput.classList.add("is-valid")
         prouductNameInput.classList.remove("is-invalid")
-
 
     }
     else {
@@ -165,9 +150,6 @@ function validProductData() {
         prouductCategoryInput.classList.add("is-invalid")
     }
 }
-
-
-
 
 /* function Search() {
     var searchTerm = searchInput.value;
