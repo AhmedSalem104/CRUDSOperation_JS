@@ -96,6 +96,7 @@ function patchProduct(index) {
 function getCancle() {
     cancelbtn.classList = "btn btn-secondary ms-2 my-5 d-none"
     addUpdatebtn.innerHTML = "add Product";
+    updateMode = false;
     clearForm()
 
 }
